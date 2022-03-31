@@ -2,7 +2,7 @@
 <p align="center"><a target="_blank"><img src="https://cdn.discordapp.com/attachments/677050949432377345/958899990682550292/unknown.png" width="200"></a></p>
 
 ## development steps
-dengan asumsi sudah menconfigure nginx proxy, dan mengcreate networknya di docker
+dengan asumsi sudah menconfigure nginx proxy, mengcreate networknya di docker, dan install sertifikatnya di browser
 
 1. Clone Repo (disarankan menggunakan ssh)
 ```wsl 
