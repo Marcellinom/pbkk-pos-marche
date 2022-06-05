@@ -48,6 +48,11 @@ return [
     */
 
     'channels' => [
+        'messages' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/messages.log'),
+            'level' => 'info',
+        ],
         'stack' => [
             'driver' => 'stack',
             'channels' => ['single'],
