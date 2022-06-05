@@ -1,6 +1,7 @@
 <?php
 
-use App\Modules\Sales\MessagingTestSales;
+namespace App\Modules\Sales;
+
 use App\Modules\Shared\Handler\MessageBus;
 
 MessageBus::setChannel("sales");

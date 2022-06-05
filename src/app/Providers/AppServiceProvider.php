@@ -23,6 +23,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $app = $this->app;
+
+        $cache_file = base_path('bootstrap/cache/module-messaging.php');
+        if (file_exists($cache_file)) {
+            require $cache_file;
+            return;
+        }
+
+        foreach (scandir($path = app_path('Modules')) as $dir) {
+            if (file_exists($filepath = "{$path}/{$dir}/messaging.php")) {
+                require $filepath;
+            }
+        }
     }
 }

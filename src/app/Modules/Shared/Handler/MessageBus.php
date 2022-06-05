@@ -31,14 +31,11 @@ class MessageBus
 
     public static function process(Message $message): void
     {
-        foreach (self::$all_listeners as $listeners_on_each_module => $label) {
-            if (!array_key_exists($message->getLabel(), $label)) continue;
-
-            foreach ($label as $source_module => $processors) {
-                if ($message->getSourceModule() != $source_module) continue;
-                foreach ($processors as $processor) {
-                    $processor::dispatch($message);
-                }
+        foreach (self::$all_listeners as $listeners_on_each_module => $labels) { // loop every modules
+            if (!isset($labels[$message->getLabel()])) continue;
+            if (!isset($labels[$message->getLabel()][$message->getSourceModule()])) continue;
+            foreach ($labels[$message->getLabel()][$message->getSourceModule()] as $processor) {
+                $processor::dispatch($message);
             }
         }
     }
