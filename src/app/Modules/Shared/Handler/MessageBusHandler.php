@@ -39,7 +39,7 @@ class MessageBusHandler implements ShouldQueue
         self::dispatch($message);
     }
 
-    public static function handle(Message $message): void
+    public function handle(Message $message): void
     {
         MessageBus::process($message);
     }

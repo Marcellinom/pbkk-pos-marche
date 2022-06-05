@@ -8,6 +8,13 @@ use Illuminate\Queue\InteractsWithQueue;
 
 abstract class MessageProcessor
 {
+    /**
+     * @return Message
+     */
+    public function getMessage(): Message
+    {
+        return $this->message;
+    }
     use Dispatchable;
     use InteractsWithQueue;
     use Queueable;
