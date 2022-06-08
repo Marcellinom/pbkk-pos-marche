@@ -9,4 +9,5 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [UserController::class, 'login']);
 Route::middleware('jwt')->group( function () {
     Route::post('/create_mitra', [MitraController::class, 'createMitra']);
+    Route::get('/me', [UserController::class, 'me']);
 });
