@@ -16,7 +16,7 @@ interface IMitraRepository
      */
     public function getByBusinessId(BusinessId $business_id): array;
 
-    public function persist(Mitra $outlet): void;
+    public function persist(Mitra $mitra): void;
 
-    public function softDelete(Mitra $outlet): void;
+    public function softDelete(Mitra $mitra): void;
 }

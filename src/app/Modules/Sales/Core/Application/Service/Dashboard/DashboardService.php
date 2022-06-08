@@ -4,7 +4,6 @@ namespace App\Modules\Sales\Core\Application\Service\Dashboard;
 
 use App\Modules\Sales\Core\Domain\Model\Business\BusinessId;
 use App\Modules\Sales\Core\Domain\Model\Mitra\MitraId;
-use App\Modules\Sales\Core\Domain\Repository\IBusinessRepository;
 use App\Modules\Sales\Core\Domain\Repository\IMitraRepository;
 use App\Modules\Sales\Core\Domain\Repository\ISalesRepository;
 use App\Modules\Shared\Model\Account;

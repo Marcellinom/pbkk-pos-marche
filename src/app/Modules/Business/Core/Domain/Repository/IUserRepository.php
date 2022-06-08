@@ -2,8 +2,8 @@
 
 namespace App\Modules\Business\Core\Domain\Repository;
 
+use App\Modules\Business\Core\Domain\Model\User\User;
 use App\Modules\Business\Core\Domain\Model\User\UserId;
-use App\Modules\IAM\Core\Domain\Model\User\User;
 
 interface IUserRepository
 {
