@@ -36,5 +36,17 @@ class AppServiceProvider extends ServiceProvider
                 require $filepath;
             }
         }
+
+        $cache_file = base_path('bootstrap/cache/module-dependencies.php');
+        if (file_exists($cache_file)) {
+            require $cache_file;
+            return;
+        }
+
+        foreach (scandir($path = app_path('Modules')) as $dir) {
+            if (file_exists($filepath = "{$path}/{$dir}/dependencies.php")) {
+                require $filepath;
+            }
+        }
     }
 }
