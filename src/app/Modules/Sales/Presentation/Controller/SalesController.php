@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Modules\Sales\Core\Application\Service\CreateSales\CreateSalesRequest;
 use App\Modules\Sales\Core\Application\Service\CreateSales\CreateSalesService;
 use App\Modules\Sales\Core\Application\Service\Dashboard\DashboardService;
+use App\Modules\Sales\Core\Application\Service\GetAllSales\GetAllSalesService;
 use App\Modules\Shared\Handler\Jwt\JwtDecoder;
 use App\Modules\Shared\Model\uow;
 use Illuminate\Http\JsonResponse;
@@ -53,5 +54,15 @@ class SalesController extends Controller
         }
         $this->uow->commit();
         return $this->success();
+    }
+
+    /**
+     * @throws ExpectedException
+     */
+    public function getAllSales(Request $request, GetAllSalesService $service): JsonResponse
+    {
+        return $this->successWithData(
+            $service->execute(JwtDecoder::decode($request->header('token')))
+        );
     }
 }
