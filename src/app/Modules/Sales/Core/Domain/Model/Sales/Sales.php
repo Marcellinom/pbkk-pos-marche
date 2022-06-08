@@ -8,7 +8,7 @@ use DateTime;
 class Sales
 {
     private SalesId $id;
-    private MitraId $outlet_id;
+    private MitraId $mitra_id;
     /**
      * @var SalesItem[]
      */
@@ -28,7 +28,7 @@ class Sales
     public function __construct(SalesId $id, MitraId $outlet_id, array $sales_items, string $made_by, float $amount_to_be_paid, DateTime $created_at)
     {
         $this->id = $id;
-        $this->outlet_id = $outlet_id;
+        $this->mitra_id = $outlet_id;
         $this->sales_items = $sales_items;
         $this->made_by = $made_by;
         $this->amount_to_be_paid = $amount_to_be_paid;
@@ -46,9 +46,9 @@ class Sales
     /**
      * @return MitraId
      */
-    public function getOutletId(): MitraId
+    public function getMitraId(): MitraId
     {
-        return $this->outlet_id;
+        return $this->mitra_id;
     }
 
     /**

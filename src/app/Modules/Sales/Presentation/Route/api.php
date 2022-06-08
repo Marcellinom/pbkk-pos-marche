@@ -7,4 +7,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('jwt')->group(function () {
     Route::get('/dashboard', [SalesController::class, 'dashboard']);
+    Route::post('/create_sales', [SalesController::class, 'createSales']);
 });
