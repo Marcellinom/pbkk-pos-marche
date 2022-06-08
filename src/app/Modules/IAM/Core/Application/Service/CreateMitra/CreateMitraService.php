@@ -4,6 +4,7 @@ namespace App\Modules\IAM\Core\Application\Service\CreateMitra;
 
 use App\Exceptions\ExpectedException;
 use App\Modules\IAM\Core\Domain\Model\Business\BusinessId;
+use App\Modules\IAM\Core\Domain\Model\Inventory\InventoryId;
 use App\Modules\IAM\Core\Domain\Model\Mitra\Mitra;
 use App\Modules\IAM\Core\Domain\Model\Mitra\MitraId;
 use App\Modules\IAM\Core\Domain\Model\Phone;
@@ -51,6 +52,7 @@ class CreateMitraService
         $mitra = new Mitra(
             MitraId::generate(),
             new BusinessId($account->getRoleId()),
+            new InventoryId($request->getInventoryId()),
             $request->getAddress(),
             false
         );

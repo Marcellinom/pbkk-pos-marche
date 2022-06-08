@@ -10,6 +10,7 @@ class CreateMitraRequest
     private string $phone;
     private string $username;
     private string $password;
+    private string $inventory_id;
 
     /**
      * @param string $name
@@ -18,8 +19,9 @@ class CreateMitraRequest
      * @param string $phone
      * @param string $username
      * @param string $password
+     * @param string $inventory_id
      */
-    public function __construct(string $name, string $email, string $address, string $phone, string $username, string $password)
+    public function __construct(string $name, string $email, string $address, string $phone, string $username, string $password, string $inventory_id)
     {
         $this->name = $name;
         $this->email = $email;
@@ -27,6 +29,7 @@ class CreateMitraRequest
         $this->phone = $phone;
         $this->username = $username;
         $this->password = $password;
+        $this->inventory_id = $inventory_id;
     }
 
     /**
@@ -75,5 +78,13 @@ class CreateMitraRequest
     public function getPassword(): string
     {
         return $this->password;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInventoryId(): string
+    {
+        return $this->inventory_id;
     }
 }

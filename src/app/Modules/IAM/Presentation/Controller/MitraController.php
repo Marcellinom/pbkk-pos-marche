@@ -36,7 +36,8 @@ class MitraController extends Controller
             $request->input("address"),
             $request->input("phone"),
             $request->input("username"),
-            $request->input("password")
+            $request->input("password"),
+            $request->input("inventory_id")
         );
         $this->uow->begin();
         try {
