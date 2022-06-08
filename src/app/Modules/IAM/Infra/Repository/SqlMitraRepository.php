@@ -8,6 +8,7 @@ use App\Modules\IAM\Core\Domain\Model\Mitra\Mitra;
 use App\Modules\IAM\Core\Domain\Model\Mitra\MitraId;
 use App\Modules\IAM\Core\Domain\Model\User\UserId;
 use App\Modules\IAM\Core\Domain\Repository\IMitraRepository;
+use App\Modules\Shared\Handler\Messaging\MessageBus;
 use Illuminate\Database\ConnectionInterface;
 
 class SqlMitraRepository implements IMitraRepository
@@ -48,7 +49,7 @@ class SqlMitraRepository implements IMitraRepository
 
     public function persist(Mitra $mitra): void
     {
-        $this->db->table('mitra')->upsert([
+        $this->db->table('mitra')->upsert($data_mitra = [
             'id' => $mitra->getId()->toString(),
             'user_id' => $mitra->getUserId()->toString(),
             'business_id' => $mitra->getBusinessId()->toString(),
@@ -56,6 +57,7 @@ class SqlMitraRepository implements IMitraRepository
             'location' => $mitra->getLocation(),
             'soft_deleted' => $mitra->isSoftDeleted()
         ], 'id');
+        MessageBus::broadcast('iam', 'MitraPersisted', $data_mitra);
     }
 
     public function softDelete(Mitra $mitra): void

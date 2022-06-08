@@ -31,21 +31,6 @@ class EventServiceProvider extends ServiceProvider
     }
 
     /**
-     * @return string[]
-     */
-    protected function discoverEventsWithin()
-    {
-        $discovered_directories = [];
-        foreach (scandir($path = app_path('Modules')) as $dir) {
-            if (file_exists($folder_path = "{$path}/{$dir}/Core/Application/EventListener")) {
-                $discovered_directories[] = $folder_path;
-            }
-        }
-
-        return array_merge(parent::discoverEventsWithin(), $discovered_directories);
-    }
-
-    /**
      * Determine if events and listeners should be automatically discovered.
      *
      * @return bool

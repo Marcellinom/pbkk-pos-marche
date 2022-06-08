@@ -7,6 +7,7 @@ use App\Modules\IAM\Core\Domain\Model\User\User;
 use App\Modules\IAM\Core\Domain\Model\User\UserId;
 use App\Modules\IAM\Core\Domain\Model\User\UserType;
 use App\Modules\IAM\Core\Domain\Repository\IUserRepository;
+use App\Modules\Shared\Handler\Messaging\MessageBus;
 use Illuminate\Database\ConnectionInterface;
 
 class SqlUserRepository implements IUserRepository
@@ -49,7 +50,7 @@ class SqlUserRepository implements IUserRepository
 
     public function persist(User $user): void
     {
-        $this->db->table('user')->upsert([
+        $this->db->table('user')->upsert($data_user = [
             'id' => $user->getId()->toString(),
             'user_type' => $user->getType()->getValue(),
             'phone' =>$user->getPhone()->getNumber(),
@@ -59,6 +60,7 @@ class SqlUserRepository implements IUserRepository
             'soft_deleted' => $user->isSoftDeleted(),
             'password' => $user->getHashedPassword()
         ], 'id');
+        MessageBus::broadcast('iam', 'UserPersisted', $data_user);
     }
 
     public function softDelete(User $user): void
