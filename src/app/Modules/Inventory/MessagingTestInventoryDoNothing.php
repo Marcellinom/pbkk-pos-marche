@@ -2,8 +2,7 @@
 
 namespace App\Modules\Inventory;
 
-use App\Modules\Shared\Handler\MessageProcessor;
-use Illuminate\Support\Facades\Log;
+use App\Modules\Shared\Handler\Messaging\MessageProcessor;
 
 class MessagingTestInventoryDoNothing extends MessageProcessor
 {

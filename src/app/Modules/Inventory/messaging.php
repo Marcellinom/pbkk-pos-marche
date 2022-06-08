@@ -1,7 +1,7 @@
 <?php
 namespace App\Modules\Inventory;
 
-use App\Modules\Shared\Handler\MessageBus;
+use App\Modules\Shared\Handler\Messaging\MessageBus;
 
 MessageBus::setChannel("inventory");
 

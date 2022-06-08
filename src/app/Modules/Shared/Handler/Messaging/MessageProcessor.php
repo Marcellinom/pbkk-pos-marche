@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Shared\Handler;
+namespace App\Modules\Shared\Handler\Messaging;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -8,6 +8,12 @@ use Illuminate\Queue\InteractsWithQueue;
 
 abstract class MessageProcessor
 {
+    use Dispatchable;
+    use InteractsWithQueue;
+    use Queueable;
+
+    private Message $message;
+
     /**
      * @return Message
      */
@@ -15,11 +21,6 @@ abstract class MessageProcessor
     {
         return $this->message;
     }
-    use Dispatchable;
-    use InteractsWithQueue;
-    use Queueable;
-
-    private Message $message;
     /**
      * @param Message $message
      */

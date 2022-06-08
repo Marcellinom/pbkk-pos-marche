@@ -1,9 +1,6 @@
 <?php
 
-namespace App\Modules\Shared\Handler;
-
-use Illuminate\Support\Facades\DB;
-use phpDocumentor\Reflection\Types\Self_;
+namespace App\Modules\Shared\Handler\Messaging;
 
 class MessageBus
 {

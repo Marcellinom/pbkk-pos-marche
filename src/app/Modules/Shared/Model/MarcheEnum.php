@@ -12,7 +12,6 @@ class MarcheEnum
      * @var mixed
      */
     protected $value;
-    protected $reflection;
 
     /**
      * @param mixed $value
@@ -28,15 +27,9 @@ class MarcheEnum
         }
         $class_name  = explode('\\', $reflection->name);
         $class_name = $class_name[count($class_name) - 1];
-        $this->reflection = $reflection;
         if (!isset($this->value)) {
             throw new ExpectedException("Invalid $class_name enum type!", 1000);
         }
-    }
-
-    public function getReflection()
-    {
-        return $this->reflection->name;
     }
 
     /**

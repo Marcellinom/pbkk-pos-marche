@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Shared\Handler;
+namespace App\Modules\Shared\Handler\Messaging;
 
 use DateTime;
 use Illuminate\Bus\Queueable;

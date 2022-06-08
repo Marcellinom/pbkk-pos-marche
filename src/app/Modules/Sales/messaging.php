@@ -2,7 +2,7 @@
 
 namespace App\Modules\Sales;
 
-use App\Modules\Shared\Handler\MessageBus;
+use App\Modules\Shared\Handler\Messaging\MessageBus;
 
 MessageBus::setChannel("sales");
 

@@ -2,7 +2,7 @@
 
 namespace App\Modules\Sales;
 
-use App\Modules\Shared\Handler\MessageProcessor;
+use App\Modules\Shared\Handler\Messaging\MessageProcessor;
 
 class MessagingTestSales extends MessageProcessor
 {
