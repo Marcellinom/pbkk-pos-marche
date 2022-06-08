@@ -34,8 +34,9 @@ class GetAllInventoryService
         $account->failIfNotClass(BusinessAccount::class, StaffAccount::class);
         $business_id = new BusinessId($account->getRoleId());
         if ($account instanceof StaffAccount) {
-            $id = $this->staff_repository->find(new StaffId($account->getroleId()));
-            $business_id = $id->getBusinessId();
+            $staff = $this->staff_repository->find(new StaffId($account->getroleId()));
+            if (!$staff) throw new ExpectedException("Staff not found", 1011);
+            $business_id = $staff->getBusinessId();
         }
         $inventories = $this->inventory_repository->getByBusinessId($business_id);
         $responses = [];

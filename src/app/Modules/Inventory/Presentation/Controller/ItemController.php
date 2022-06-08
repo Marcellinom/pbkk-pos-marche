@@ -4,6 +4,8 @@ namespace App\Modules\Inventory\Presentation\Controller;
 
 use App\Exceptions\ExpectedException;
 use App\Http\Controllers\Controller;
+use App\Modules\Inventory\Core\Application\Service\FindItem\FindItemRequest;
+use App\Modules\Inventory\Core\Application\Service\FindItem\FindItemService;
 use App\Modules\Inventory\Core\Application\Service\GetAllItem\GetAllItemRequest;
 use App\Modules\Inventory\Core\Application\Service\GetAllItem\GetAllItemService;
 use App\Modules\Shared\Handler\Jwt\JwtDecoder;
@@ -32,6 +34,19 @@ class ItemController extends Controller
         $input = new GetAllItemRequest($request->input('id_gudang'));
         return $this->successWithData(
             $service->execute($input, JwtDecoder::decode($request->header('token')))
+        );
+    }
+
+    /**
+     * @throws ExpectedException
+     */
+    public function findItem(Request $request, FindItemService $service): JsonResponse
+    {
+        return $this->successWithData(
+            $service->execute(
+                new FindItemRequest($request->input('id_barang')),
+                JwtDecoder::decode($request->header('token'))
+            )
         );
     }
 }

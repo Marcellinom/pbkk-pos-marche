@@ -37,7 +37,7 @@ class GetAllItemService
         $inventory = $this->inventory_repository->find(new InventoryId($request->getIdInventory()));
         if ($account instanceof MitraAccount) {
             $mitra = $this->mitra_repository->find(new MitraId($account->getRoleId()));
-            if ($inventory->getId()->toString() != $mitra->getInventoryId()->toString()) {
+            if (!$mitra || $inventory->getId()->toString() != $mitra->getInventoryId()->toString()) {
                 throw new ExpectedException("Mitra has no access to this Inventory!", 1010);
             }
         }
