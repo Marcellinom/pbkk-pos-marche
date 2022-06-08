@@ -6,6 +6,7 @@ use App\Modules\Shared\Model\MarcheEnum;
 
 class UserType  extends MarcheEnum
 {
+    public const MITRA = "Mitra";
     public const STAFF = "Staff";
     public const BUSINESS_OWNER = "Business Owner";
 }

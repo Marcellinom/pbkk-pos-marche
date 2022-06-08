@@ -2,9 +2,9 @@
 
 namespace App\Modules\Shared\Model;
 
-class Amount
+class ItemUnitData
 {
-    private float $quantity;
+    private float $stock;
     private float $unit_price;
     private string $unit;
 
@@ -15,7 +15,7 @@ class Amount
      */
     public function __construct(float $quantity, float $unit_price, string $unit)
     {
-        $this->quantity = $quantity;
+        $this->stock = $quantity;
         $this->unit_price = $unit_price;
         $this->unit = $unit;
     }
@@ -23,9 +23,9 @@ class Amount
     /**
      * @return float
      */
-    public function getQuantity(): float
+    public function getStock(): float
     {
-        return $this->quantity;
+        return $this->stock;
     }
 
     /**
@@ -37,18 +37,15 @@ class Amount
     }
 
     /**
-     * @return float
-     */
-    public function getTotalPrice(): float
-    {
-        return $this->unit_price * $this->quantity;
-    }
-
-    /**
      * @return string
      */
     public function getUnit(): string
     {
         return $this->unit;
+    }
+
+    public function getTotalPriceForQuantity(float $quantity): float
+    {
+        return $this->unit_price * $quantity;
     }
 }

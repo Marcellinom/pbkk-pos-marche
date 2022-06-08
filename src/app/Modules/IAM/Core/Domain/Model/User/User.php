@@ -11,7 +11,7 @@ class User extends UserAuth
     private UserId $id;
     private UserType $type;
     private Phone $phone;
-    private string $email;
+    private string $name;
     private string $username;
     private DateTime $created_at;
     private bool $soft_deleted;
@@ -36,7 +36,7 @@ class User extends UserAuth
         $this->id = $id;
         $this->type = $type;
         $this->phone = $phone;
-        $this->email = $email;
+        $this->name = $email;
         $this->username = $username;
         $this->created_at = $created_at;
         $this->soft_deleted = $soft_deleted;
@@ -78,9 +78,9 @@ class User extends UserAuth
     /**
      * @return string
      */
-    public function getEmail(): string
+    public function getName(): string
     {
-        return $this->email;
+        return $this->name;
     }
 
     /**

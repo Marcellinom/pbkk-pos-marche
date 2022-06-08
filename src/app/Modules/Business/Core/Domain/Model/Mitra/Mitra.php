@@ -1,25 +1,25 @@
 <?php
 
-namespace App\Modules\Business\Core\Domain\Model\Outlet;
+namespace App\Modules\Business\Core\Domain\Model\Mitra;
 
 use App\Modules\Business\Core\Domain\Model\Business\BusinessId;
 
-class Outlet
+class Mitra
 {
-    private OutletId $id;
+    private MitraId $id;
     private BusinessId $business_id;
     private string $name;
     private string $location;
     private bool $soft_deleted;
 
     /**
-     * @param OutletId $id
+     * @param MitraId $id
      * @param BusinessId $business_id
      * @param string $name
      * @param string $location
      * @param bool $soft_deleted
      */
-    public function __construct(OutletId $id, BusinessId $business_id, string $name, string $location, bool $soft_deleted)
+    public function _construct(MitraId $id, BusinessId $business_id, string $name, string $location, bool $soft_deleted)
     {
         $this->id = $id;
         $this->business_id = $business_id;
@@ -29,9 +29,9 @@ class Outlet
     }
 
     /**
-     * @return OutletId
+     * @return MitraId
      */
-    public function getId(): OutletId
+    public function getId(): MitraId
     {
         return $this->id;
     }

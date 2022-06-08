@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\Sales\Core\Domain\Model\Outlet;
+namespace App\Modules\Inventory\Core\Domain\Model\Item;
 
 use App\Modules\Shared\Model\Uuidtrait;
 
-class OutletId
+class SkuId
 {
     use Uuidtrait;
 }
