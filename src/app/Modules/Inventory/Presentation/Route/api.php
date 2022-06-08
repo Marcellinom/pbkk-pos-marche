@@ -11,4 +11,5 @@ Route::middleware('iam')->group(function () {
     Route::post('/create_inventory', [InventoryController::class, 'createInventory']);
     Route::get('/get_all_items', [ItemController::class, 'getAllItem']);
     Route::get('/find_item', [ItemController::class, 'findItem']);
+    Route::post('/add_item', [ItemController::class, 'addItem']);
 });

@@ -48,7 +48,7 @@ class FindItemService
             $item->getUnitdata()->getUnitPrice(),
             $item->getUnitdata()->getStock(),
             $item->getUnitdata()->getUnit(),
-            $this->photo_manager->getPhotoUrl($item),
+            $this->photo_manager->getPhotoUrl($item->getId()),
             $item->getDimension()->getLength(),
             $item->getDimension()->getWidth(),
             $item->getDimension()->getHeight(),
