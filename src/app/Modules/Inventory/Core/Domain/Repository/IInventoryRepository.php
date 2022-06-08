@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Inventory\Core\Repository;
+namespace App\Modules\Inventory\Core\Domain\Repository;
 
 use App\Modules\Inventory\Core\Domain\Model\Business\BusinessId;
 use App\Modules\Inventory\Core\Domain\Model\Inventory\Inventory;

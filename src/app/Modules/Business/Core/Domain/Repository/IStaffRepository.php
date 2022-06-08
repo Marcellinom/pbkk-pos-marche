@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Modules\IAM\Core\Repository;
+namespace App\Modules\Business\Core\Domain\Repository;
 
-use App\Modules\IAM\Core\Domain\Model\Staff\Staff;
-use App\Modules\IAM\Core\Domain\Model\Staff\StaffId;
+use App\Modules\Business\Core\Domain\Model\Staff\Staff;
+use App\Modules\Business\Core\Domain\Model\Staff\StaffId;
 
 interface IStaffRepository
 {

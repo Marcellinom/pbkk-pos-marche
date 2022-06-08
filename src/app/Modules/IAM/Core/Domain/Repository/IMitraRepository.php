@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Modules\Inventory\Core\Repository;
+namespace App\Modules\IAM\Core\Domain\Repository;
 
-use App\Modules\Inventory\Core\Domain\Model\Mitra\Mitra;
-use App\Modules\Inventory\Core\Domain\Model\Mitra\MitraId;
+use App\Modules\IAM\Core\Domain\Model\Mitra\Mitra;
+use App\Modules\IAM\Core\Domain\Model\Mitra\MitraId;
 
 interface IMitraRepository
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\IAM\Core\Repository;
+namespace App\Modules\IAM\Core\Domain\Repository;
 
 use App\Modules\IAM\Core\Domain\Model\Business\Business;
 use App\Modules\IAM\Core\Domain\Model\Business\BusinessId;

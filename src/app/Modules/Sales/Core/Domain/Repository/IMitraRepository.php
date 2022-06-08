@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Sales\Core\Repository;
+namespace App\Modules\Sales\Core\Domain\Repository;
 
 use App\Modules\Sales\Core\Domain\Model\Business\BusinessId;
 use App\Modules\Sales\Core\Domain\Model\Mitra\Mitra;

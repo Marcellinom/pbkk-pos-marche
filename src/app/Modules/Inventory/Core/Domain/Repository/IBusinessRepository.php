@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Modules\Sales\Core\Repository;
+namespace App\Modules\Inventory\Core\Domain\Repository;
 
-use App\Modules\Sales\Core\Domain\Model\Business\Business;
-use App\Modules\Sales\Core\Domain\Model\Business\BusinessId;
+use App\Modules\Inventory\Core\Domain\Model\Business\Business;
+use App\Modules\Inventory\Core\Domain\Model\Business\BusinessId;
 
 interface IBusinessRepository
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\Inventory\Core\Repository;
+namespace App\Modules\Sales\Core\Domain\Repository;
 
-use App\Modules\Inventory\Core\Domain\Model\Inventory\InventoryId;
-use App\Modules\Inventory\Core\Domain\Model\Item\Item;
-use App\Modules\Inventory\Core\Domain\Model\Item\ItemId;
+use App\Modules\Sales\Core\Domain\Model\Inventory\InventoryId;
+use App\Modules\Sales\Core\Domain\Model\Item\Item;
+use App\Modules\Sales\Core\Domain\Model\Item\ItemId;
 
 interface IItemRepository
 {
