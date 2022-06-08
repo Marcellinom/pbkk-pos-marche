@@ -8,7 +8,7 @@ use App\Modules\IAM\Core\Domain\Repository\IBusinessRepository;
 use App\Modules\IAM\Core\Domain\Repository\IMitraRepository;
 use App\Modules\IAM\Core\Domain\Repository\IStaffRepository;
 use App\Modules\IAM\Core\Domain\Repository\IUserRepository;
-use App\Modules\IAM\Core\Domain\Service\JwtGenerator;
+use App\Modules\IAM\Core\Domain\Service\IJwtGenerator;
 use App\Modules\Shared\Model\RoleAccount\BusinessAccount;
 use App\Modules\Shared\Model\RoleAccount\MitraAccount;
 use App\Modules\Shared\Model\RoleAccount\StaffAccount;
@@ -19,16 +19,16 @@ class LoginService
     private IBusinessRepository $business_repository;
     private IMitraRepository $mitra_repository;
     private IStaffRepository $staff_repository;
-    private JwtGenerator $jwt_generator;
+    private IJwtGenerator $jwt_generator;
 
     /**
      * @param IUserRepository $user_repository
      * @param IBusinessRepository $business_repository
      * @param IMitraRepository $mitra_repository
      * @param IStaffRepository $staff_repository
-     * @param JwtGenerator $jwt_generator
+     * @param IJwtGenerator $jwt_generator
      */
-    public function __construct(IUserRepository $user_repository, IBusinessRepository $business_repository, IMitraRepository $mitra_repository, IStaffRepository $staff_repository, JwtGenerator $jwt_generator)
+    public function __construct(IUserRepository $user_repository, IBusinessRepository $business_repository, IMitraRepository $mitra_repository, IStaffRepository $staff_repository, IJwtGenerator $jwt_generator)
     {
         $this->user_repository = $user_repository;
         $this->business_repository = $business_repository;
