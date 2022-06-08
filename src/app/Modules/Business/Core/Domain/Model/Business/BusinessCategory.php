@@ -6,7 +6,7 @@ use App\Modules\Shared\Model\MarcheEnum;
 
 class BusinessCategory extends MarcheEnum
 {
-    public const PERTANIAN = 'Pertania';
+    public const PERTANIAN = 'Pertanian';
     public const PERIKANAN = 'Perikanan';
     public const OTOMOTIF = 'Otomotif';
     public const MAKANAN_MINUMAN = 'Makanan dan Minuman';

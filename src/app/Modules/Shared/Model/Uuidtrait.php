@@ -25,8 +25,11 @@ trait Uuidtrait
         return $this->guid;
     }
 
-    public static function generate(): string
+    /**
+     * @throws ExpectedException
+     */
+    public static function generate(): self
     {
-        return Uuid::uuid4()->toString();
+        return new self(Uuid::uuid4()->toString());
     }
 }
