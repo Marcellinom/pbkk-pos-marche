@@ -12,4 +12,5 @@ Route::middleware('iam')->group(function () {
     Route::get('/get_all_items', [ItemController::class, 'getAllItem']);
     Route::get('/find_item', [ItemController::class, 'findItem']);
     Route::post('/add_item', [ItemController::class, 'addItem']);
+    Route::post('/edit_item', [ItemController::class, 'editItem']);
 });

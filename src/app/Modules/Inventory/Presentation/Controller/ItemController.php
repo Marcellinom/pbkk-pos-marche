@@ -6,6 +6,8 @@ use App\Exceptions\ExpectedException;
 use App\Http\Controllers\Controller;
 use App\Modules\Inventory\Core\Application\Service\AddItem\AddItemRequest;
 use App\Modules\Inventory\Core\Application\Service\AddItem\AddItemService;
+use App\Modules\Inventory\Core\Application\Service\EditItem\EditItemRequest;
+use App\Modules\Inventory\Core\Application\Service\EditItem\EditItemService;
 use App\Modules\Inventory\Core\Application\Service\FindItem\FindItemRequest;
 use App\Modules\Inventory\Core\Application\Service\FindItem\FindItemService;
 use App\Modules\Inventory\Core\Application\Service\GetAllItem\GetAllItemRequest;
@@ -60,6 +62,38 @@ class ItemController extends Controller
     {
         $input = new AddItemRequest(
             $request->input('name'),
+            $request->input('price'),
+            $request->input('quantity'),
+            $request->input('unit'),
+            $request->input('length'),
+            $request->input('width'),
+            $request->input('height'),
+            $request->input('weight'),
+            $request->input('inventory_id'),
+            $request->input('photo')
+        );
+
+        $this->uow->begin();
+        try {
+            $service->execute($input, JwtDecoder::decode($request->header('token')));
+        } catch (Throwable $e) {
+            $this->uow->rollback();
+            throw $e;
+        }
+        $this->uow->commit();
+        return $this->success();
+    }
+
+    /**
+     * @throws Throwable
+     * @throws ExpectedException
+     */
+    public function editItem(Request $request, EditItemService $service): JsonResponse
+    {
+        $input = new EditItemRequest(
+            $request->input('item_id'),
+            $request->input('name'),
+            $request->input('sku_id'),
             $request->input('price'),
             $request->input('quantity'),
             $request->input('unit'),
