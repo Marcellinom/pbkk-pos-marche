@@ -6,5 +6,5 @@ use App\Modules\Shared\Model\Account;
 
 interface JwtGenerator
 {
-    public function generate(Account $account);
+    public function generate(Account $account): string;
 }

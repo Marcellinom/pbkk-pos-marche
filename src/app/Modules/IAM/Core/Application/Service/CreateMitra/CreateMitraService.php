@@ -51,6 +51,7 @@ class CreateMitraService
 
         $mitra = new Mitra(
             MitraId::generate(),
+            $user->getId(),
             new BusinessId($account->getRoleId()),
             new InventoryId($request->getInventoryId()),
             $request->getAddress(),

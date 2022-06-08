@@ -9,6 +9,8 @@ interface IUserRepository
 {
     public function find(UserId $id): ?User;
 
+    public function findByUsername(string $username): ?User;
+
     public function persist(User $user): void;
 
     public function softDelete(User $user): void;
