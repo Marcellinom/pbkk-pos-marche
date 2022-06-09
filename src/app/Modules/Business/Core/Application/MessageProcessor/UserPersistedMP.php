@@ -29,7 +29,7 @@ class UserPersistedMP extends MessageProcessor
             new UserId($msg['id']),
             new Phone($msg['phone']),
             (new \DateTime())->setTimestamp($msg['created_at']),
-            $msg['email']
+            $msg['name']
         );
         try {
             $this->user_repository->persist($staff);

@@ -38,7 +38,7 @@ class GetAllMitraService
                 $mitra->getName(),
                 $mitra->getLocation(),
                 $user->getPhone()->getNumber(),
-                $user->getCreatedAt()
+                $user->getCreatedAt()->format("Y-M-d H:M:S")
             );
         }
         return $responses;

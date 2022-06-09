@@ -10,20 +10,20 @@ class User
     private UserId $id;
     private Phone $phone;
     private DateTime $created_at;
-    private string $email;
+    private string $name;
 
     /**
      * @param UserId $id
      * @param Phone $phone
      * @param DateTime $created_at
-     * @param string $email
+     * @param string $name
      */
-    public function __construct(UserId $id, Phone $phone, DateTime $created_at, string $email)
+    public function __construct(UserId $id, Phone $phone, DateTime $created_at, string $name)
     {
         $this->id = $id;
         $this->phone = $phone;
         $this->created_at = $created_at;
-        $this->email = $email;
+        $this->name = $name;
     }
 
     /**
@@ -53,8 +53,8 @@ class User
     /**
      * @return string
      */
-    public function getEmail(): string
+    public function getName(): string
     {
-        return $this->email;
+        return $this->name;
     }
 }
