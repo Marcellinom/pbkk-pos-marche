@@ -27,7 +27,7 @@ class SqlUserRepository implements IUserRepository
             new UserId($row->id),
             new Phone($row->phone),
             (new \DateTime())->setTimestamp($row->created_at),
-            $row->email
+            $row->name
         ) : null;
     }
 
@@ -37,7 +37,7 @@ class SqlUserRepository implements IUserRepository
             'id' => $user->getId()->toString(),
             'phone' => $user->getPhone()->getNumber(),
             'created_at' => $user->getCreatedAt()->getTimestamp(),
-            'email' => $user->getEmail()
+            'name' => $user->getName()
         ], 'id');
     }
 
